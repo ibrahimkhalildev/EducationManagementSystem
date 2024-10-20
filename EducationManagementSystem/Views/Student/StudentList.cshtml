@@ -1,0 +1,32 @@
+﻿@model List<EducationManagementSystem.Models.Student>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Student List";
+}
+
+<h3>Student List</h3>
+<table class="table table-striped table-hover table-bordered border-info table-responsive">
+    <caption>List of Students</caption>
+    <thead>
+        <tr class="table-info">
+            <th>Student Name</th>
+            <th>Course Name</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentName</td>
+                <td>@student.SelectCourse.CourseName</td>
+                <td>@student.SelectCourse.SelectTeacher.TeacherName</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
